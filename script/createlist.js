@@ -51,7 +51,7 @@ const listData = {
 };
 
 // Faz a requisição POST para enviar os dados para a API Java
-fetch('http://localhost:8080/api/shopping', {
+fetch('https://listasdetarefas-api.up.railway.app/api/shopping', {
  method: 'POST',
  headers: {
      'Content-Type': 'application/json'
