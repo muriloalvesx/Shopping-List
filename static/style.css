@@ -31,12 +31,14 @@ body {
 
 
 
-.perfil h1 {
+.perfil h1,
+.perfiluser h1 {
   text-align: center;
   color: var(--white);
 }
 
-.perfil span {
+.perfil span ,
+.perfiluser span {
   color: var(--white);
   letter-spacing: 1px;
 }
@@ -205,4 +207,22 @@ body {
 
 .item i:hover {
   color: #c82333; 
+}
+
+
+.logout-icon {
+  font-size: 24px; /* Tamanho do ícone */
+  color: #d32f2f; /* Cor do ícone */
+  cursor: pointer; /* Mão ao passar o mouse */
+  margin-left: -40px; /* Espaço entre o nome e o ícone */
+}
+
+.logout-icon:hover {
+  color: #f44336; /* Cor mais escura ao passar o mouse */
+}
+
+.perfiluser{
+    display: flex; /* Usando flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-between; /* Espaça o conteúdo */
 }
