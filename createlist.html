@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Lista</title>  
+    <link rel="preload" href="static/style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+  <div class="container">
+    <div class="perfil">
+    <div id="fecha"></div>
+    <h1>Adicionar Lista</h1>
+    <span><h3 style="margin-top: 20px;">Nome da lista</h3></span>
+</div>
+
+<div class="add-list">
+    <input id="listName" type="text" placeholder="Insira o nome da lista">
+   </div>
+
+   <div class="section-list">
+    <h3 style="text-align: left; margin-top: 20px; margin-bottom: 0px">Adicionar itens</h3>
+    <div class="add-list">
+        <input type="text" id="itemInput" placeholder="Adicione os itens">
+        <i class="fas fa-plus-circle" onclick="addItem()"></i>
+    </div>
+    <ul id="itemList"></ul>
+</div> 
+
+      <div class="field">
+        <button class="submit-button-list" onclick="saveList()">Concluir</button></div>
+    
+  </div>
+<script src="script/createlist.js"></script>
+</body>
+</html>

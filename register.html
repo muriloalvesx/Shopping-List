@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas de Compras - Registrar</title>  
+    <link rel="preload" href="static/style.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    
+<div class="container">
+    <form id="registerForm" method="post">
+    <div class="perfil">
+        <div id="close"></div>
+        <h1>Registrar</h1>
+        <span>Usuário</span>
+    </div>
+
+    <div class="add-list">
+        <input type="text" id="username" placeholder="Insira o seu usuário">
+       </div>
+
+    <div class="perfil">
+      <div id="close"></div>
+      <span>Senha</span>
+  </div>
+
+    <div class="add-list">
+      <input type="text" id="password" placeholder="Insira a sua senha">
+      </div>
+
+      <div class="field">
+        <input class="submit-button" type="submit" value="Registrar">
+      </div>
+    
+
+    
+    <div class="section-list">
+        <h3>Já tem uma conta? </h3>
+        <h4><a href="index.html">Entrar</a></h4>
+        <ul id="lista"></ul>
+
+    </form>
+    </div>   
+</div>
+<script src="script/register.js"></script>
+</body>
+</html>
