@@ -15,10 +15,13 @@
     
   <div class="container">
     <div class="perfil">
-    <div id="fecha"></div>
-    <h1>Adicionar Lista</h1>
-    <span><h3 style="margin-top: 20px;">Nome da lista</h3></span>
-</div>
+      <div id="fecha"></div>
+      <h1 style="display: flex; align-items: center; justify-content: center;">
+          <a href="lists.html"><i class="fas fa-arrow-left" style="cursor: pointer; font-size: 24px; color: #fff; margin-right: 10px;"></i></a>
+          <span style="flex-grow: 1; text-align: center;">Adicionar Lista</span>
+      </h1>
+      <span><h3 style="margin-top: 20px;">Nome da lista</h3></span>
+  </div>
 
 <div class="add-list">
     <input id="listName" type="text" placeholder="Insira o nome da lista">
@@ -27,7 +30,7 @@
    <div class="section-list">
     <h3 style="text-align: left; margin-top: 20px; margin-bottom: 0px">Adicionar itens</h3>
     <div class="add-list">
-        <input type="text" id="itemInput" placeholder="Adicione os itens">
+        <input type="text" id="itemInput" placeholder="Adicione os itens" required/>
         <i class="fas fa-plus-circle" onclick="addItem()"></i>
     </div>
     <ul id="itemList"></ul>
