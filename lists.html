@@ -14,17 +14,18 @@
 <body>
     
   <div class="container">
-      <div class="perfil">
+      <div class="perfiluser">
           <div id="close"></div>
           <h1>Olá <span id="userName"></span></h1>
+          <i class="fas fa-door-open logout-icon" onclick="logout()"></i>
       </div>
   
       <div class="field">
-        <button class="submit-button-list" onclick="window.location.href = 'createlist.html'">Adicionar Lista</button></div>
+        <button class="submit-button-list" onclick="window.location.href = 'createlist.html'">Adicionar Lista</button>
+      </div>
   
-      
       <div class="section-list">
-          <h3>Estas são suas listas  </h3>
+          <h3>Estas são suas listas</h3>
           <ul id="shoppingLists"></ul>
       </div>   
   </div>
