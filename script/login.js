@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
     const loginResult = document.getElementById('loginResult');
 
     try {
-        const response = await fetch('https://listasdetarefas-api.up.railway.app/api/users/login', {
+        const response = await fetch('https://listasdecompras-api.up.railway.app/api/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
