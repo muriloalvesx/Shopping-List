@@ -62,7 +62,7 @@ function saveList() {
     };
 
     // Faz a requisição POST para enviar os dados para a API Java
-    fetch('https://listasdetarefas-api.up.railway.app/api/shopping', {
+    fetch('https://listasdecompras-api.up.railway.app/api/shopping', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
