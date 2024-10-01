@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', fetchListDetails);
 
 const token = localStorage.getItem('token'); // Pega o token de autenticação
+const login = localStorage.getItem('username');
 
 // Função para obter o ID da lista a partir da URL
 function getListIdFromURL() {
@@ -24,7 +25,7 @@ async function fetchListDetails() {
     }
 
     try {
-        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}`, {
+        const response = await fetch(`http://localhost:8080/api/shopping/${listId}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -47,7 +48,10 @@ async function fetchListDetails() {
 function renderListDetails(listDetails) {
     const listDetailsDiv = document.getElementById('listDetails');
     listDetailsDiv.innerHTML = `
-        <h2 style="font-size: 35px; text-align: center; color: #fff; margin-bottom: 25px">${listDetails.nome}</h2>
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-arrow-left" onclick="goBack()" style="cursor: pointer; font-size: 24px; color: #fff; position: absolute; margin-left: -300px"></i>
+            <h2 style="font-size: 35px; color: #fff; margin-bottom: 25px;">${listDetails.nome}</h2>
+        </div>
         <div class="list-container">
             <ul class="item-list">
                 ${listDetails.itens.map((item, index) => `
@@ -61,6 +65,10 @@ function renderListDetails(listDetails) {
     `;
 }
 
+function goBack() {
+    window.location.href = 'lists.html'; // Redireciona para lists.html
+}
+
 // Função para adicionar um novo item à lista
 document.getElementById('addItemForm').addEventListener('submit', async function(e) {
     e.preventDefault();  // Impede o recarregamento da página
@@ -72,7 +80,7 @@ document.getElementById('addItemForm').addEventListener('submit', async function
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}/items`, {
+        const response = await fetch(`http://localhost:8080/api/shopping/${listId}/items`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -100,7 +108,7 @@ async function removeItem(index) {
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}/items/${index}`, {
+        const response = await fetch(`http://localhost:8080/api/shopping/${listId}/items/${index}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -116,4 +124,5 @@ async function removeItem(index) {
         console.error('Erro ao remover item:', error);
         alert('Erro ao conectar com a API.');
     }
+
 }
