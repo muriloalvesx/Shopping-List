@@ -27,7 +27,8 @@ async function fetchListDetails() {
         const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}`, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             }
         });
 
