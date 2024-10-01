@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', getListIdFromURL);
+document.addEventListener('DOMContentLoaded', fetchListDetails);
 
 const token = localStorage.getItem('token'); // Pega o token de autenticação
 
