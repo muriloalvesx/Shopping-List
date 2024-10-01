@@ -16,7 +16,7 @@ async function fetchLists() {
     }
 
     try {
-        const response = await fetch(`https://listasdetarefas-api.up.railway.app/api/shopping?username=${usuario}`, { 
+        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping?username=${usuario}`, { 
     method: 'GET',
     headers: {
         'Authorization': `Bearer ${token}`
@@ -77,7 +77,7 @@ async function deleteList(listId) {
     }
 
     try {
-        const response = await fetch(`https://listasdetarefas-api.up.railway.app/api/shopping/${listId}`, {  // URL da API para deletar listas
+        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}`, {  // URL da API para deletar listas
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
