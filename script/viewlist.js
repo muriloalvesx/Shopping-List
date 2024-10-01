@@ -25,7 +25,7 @@ async function fetchListDetails() {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/api/shopping/${listId}`, {
+        const response = await fetch(`https://listasdetarefas-api.up.railway.app/api/shopping/${listId}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -80,7 +80,7 @@ document.getElementById('addItemForm').addEventListener('submit', async function
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(`http://localhost:8080/api/shopping/${listId}/items`, {
+        const response = await fetch(`https://listasdetarefas-api.up.railway.app/api/shopping/${listId}/items`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ async function removeItem(index) {
     const token = localStorage.getItem('token');
 
     try {
-        const response = await fetch(`http://localhost:8080/api/shopping/${listId}/items/${index}`, {
+        const response = await fetch(`https://listasdetarefas-api.up.railway.app/api/shopping/${listId}/items/${index}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
