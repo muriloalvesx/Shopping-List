@@ -84,7 +84,7 @@ body {
 
 
 
-/*AGREGAR TAREA*/
+/*ADICIONAR TAREFA*/
 
 .add-list {
   background-color: var(--white) ;
@@ -211,18 +211,18 @@ body {
 
 
 .logout-icon {
-  font-size: 24px; /* Tamanho do ícone */
-  color: #d32f2f; /* Cor do ícone */
-  cursor: pointer; /* Mão ao passar o mouse */
-  margin-left: -40px; /* Espaço entre o nome e o ícone */
+  font-size: 24px;
+  color: #d32f2f;
+  cursor: pointer;
+  margin-left: -40px;
 }
 
 .logout-icon:hover {
-  color: #f44336; /* Cor mais escura ao passar o mouse */
+  color: #f44336;
 }
 
 .perfiluser{
-    display: flex; /* Usando flexbox */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: space-between; /* Espaça o conteúdo */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
