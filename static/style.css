@@ -82,7 +82,11 @@ body {
   text-align: center;
 }
 
-
+.error-message{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 22px;
+}
 
 /*ADICIONAR TAREFA*/
 
