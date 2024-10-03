@@ -20,7 +20,7 @@ document.getElementById('loginForm').addEventListener('submit', async (event) =>
             localStorage.setItem('username', login);
             window.location.href = 'lists.html';
         } else if (response.status === 400) {
-            loginResult.innerHTML = `<p>API return</p>`;
+            loginResult.innerHTML = `<p>Usuário ou senha incorreto!</p>`;
             loginResult.style.color = 'red';
         } else {
             const errorData = await response.json();
