@@ -7,10 +7,9 @@ const usuario = localStorage.getItem('username');
 async function fetchLists() {
     if (!token) {
         alert('Você precisa estar logado!');
-        window.location.href = 'index.html'; // Redireciona para a página de login
+        window.location.href = 'index.html';
     }
-    
-    // Se o nome do usuário estiver disponível, exibe na página
+
     if (userName) {
         document.getElementById('userName').textContent = usuario;
     }
@@ -25,7 +24,7 @@ async function fetchLists() {
 
         if (response.ok) {
             const lists = await response.json();
-            renderLists(lists);  // Renderiza as listas na página
+            renderLists(lists);
         } else {
             alert('Erro ao buscar listas. Tente novamente.');
         }
@@ -38,7 +37,7 @@ async function fetchLists() {
 // Função para renderizar as listas na página
 function renderLists(lists) {
     const shoppingLists = document.getElementById('shoppingLists');
-    shoppingLists.innerHTML = ''; // Limpa a lista antes de renderizar
+    shoppingLists.innerHTML = '';
 
     if (lists.length === 0) {
         shoppingLists.innerHTML = '<p style="color: #fff; text-align: center; font-size: 25px">Nenhuma lista encontrada</p>';
@@ -58,14 +57,14 @@ function renderLists(lists) {
     });
 }
 
-// Função para visualizar uma lista (redireciona para uma página de detalhes da lista)
+// Função para visualizar uma lista
 function viewList(listId) {
     window.location.href = `viewlist.html?listId=${listId}`;
 }
 
 // Função para deletar uma lista
 async function deleteList(listId) {
-    const token = localStorage.getItem('token'); // Pega o token de autenticação
+    const token = localStorage.getItem('token');
 
     if (!token) {
         alert("Você precisa estar logado!");
@@ -77,7 +76,7 @@ async function deleteList(listId) {
     }
 
     try {
-        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}`, {  // URL da API para deletar listas
+        const response = await fetch(`https://listasdecompras-api.up.railway.app/api/shopping/${listId}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -85,7 +84,7 @@ async function deleteList(listId) {
         });
 
         if (response.ok) {
-            fetchLists();  // Atualiza as listas após a exclusão
+            fetchLists();
         } else {
             alert('Erro ao deletar lista. Tente novamente.');
         }
@@ -98,8 +97,5 @@ async function deleteList(listId) {
 // Função para realizar logout
 function logout() {
     localStorage.removeItem('token');
-    window.location.href = 'index.html';  // Redireciona para a página de login
+    window.location.href = 'index.html';
 }
-
-// Carrega as listas ao carregar a página
-document.addEventListener('DOMContentLoaded', fetchLists);
