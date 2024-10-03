@@ -17,6 +17,9 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
             const data = await response.json();
             localStorage.setItem('token', data.token);
             window.location.href = 'index.html';
+        } else if (response.status === 400) {
+            registerResult.innerHTML = `<p>O usuário inserido já existe!</p>`;
+            registerResult.style.color = 'red';
         } else {
             const errorData = await response.json();
             loginResult.innerHTML = `<p>Erro: ${errorData.message}</p>`;
